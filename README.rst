@@ -1,3 +1,24 @@
+.. image:: https://img.shields.io/travis/erikrose/joes-ntpdate.svg
+    :alt: Travis Continous Integration
+    :target: https://travis-ci.org/erikrose/joes-ntpdate/
+
+.. image:: https://coveralls.io/repos/erikrose/joes-ntpdate/badge.png?branch=master
+    :alt: Coveralls Code Coverage
+    :target: https://coveralls.io/r/erikrose/joes-ntpdate?branch=master
+
+.. image:: https://img.shields.io/pypi/v/joes-ntpdate.svg
+    :alt: Latest Version
+    :target: https://pypi.python.org/pypi/joes-ntpdate
+
+.. image:: https://pypip.in/license/joes-ntpdate/badge.svg
+    :alt: License
+    :target: http://opensource.org/licenses/MIT
+
+.. image:: https://img.shields.io/pypi/dm/joes-ntpdate.svg
+    :alt: Downloads
+    :target: https://pypi.python.org/pypi/joes-ntpdate
+
+
 Joe's Own ntpdate
 =================
 
