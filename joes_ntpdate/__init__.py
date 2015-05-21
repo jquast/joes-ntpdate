@@ -16,10 +16,11 @@ import sys
 # 3rd-party
 import ntplib
 
-NTP_HOST = 'pool.ntp.org'
-
-# keep trying up to {n} times
-TRIES = 30
+DATEHELP_STRFTIME_MAP = {
+  'MMDDhhmm[[CC]YY][.ss]': '%m%d%H%M%Y.%S',  # gnu
+  '[[[mm]dd]HH]MM[[cc]yy][.ss]]': '%m%d%H%M%Y.%S',  # osx
+  '[[[[[[cc]yy]mm]dd]HH]MM[.SS]]': '%Y%m%d%H%M.%S',  # openbsd
+}
 
 def has_hwclock():
     try:
@@ -33,42 +34,26 @@ def has_hwclock():
         raise
     return (_stdout + _stderr).startswith('hwclock from util-linux')
 
-def is_date_gnu():
+def get_strftime_fmt():
     _stdout, _stderr = subprocess.Popen(
             ['date', '--help'],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE).communicate()
-    return bool('MMDDhhmm[[CC]YY][.ss]' in (_stdout + _stderr))
 
-def is_date_bsd():
-    _stdout, _stderr = subprocess.Popen(
-            ['date', '--help'],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE).communicate()
-    return bool('[[[[[[cc]yy]mm]dd]HH]MM[.SS]]' in (_stdout + _stderr))
-
+    for desc_fmt, strftime_fmt in DATEHELP_STRFTIME_MAP.items():
+        if desc_fmt in (_stdout + _stderr):
+            return strftime_fmt
+    assert False, ("Could not determine system strftime, please file "
+                   "a bug report: github.com/jquast/joes-ntpdate ",
+                   (_stdout, _stderr))
 
 def do_set_hwclock(struct_time):
     subprocess.check_call(['hwclock', '--systohc'])
 
 def do_set_system(struct_time):
-    # for display and shell value passing,
-    # use a common strftime(3) format.
-
     # date(1): display or set date and time
     # -u: set date in UTC (Coordinated Universal) time.
-    cmd_args = ['date', '-u']
-    if is_date_bsd():
-       cmd_args += [time.strftime('%Y%m%d%H%M.%S', struct_time)]
-    elif is_date_gnu():
-       cmd_args += [time.strftime('%m%d%H%M%Y.%S', struct_time)]
-    else:
-        assert False, (
-               "Unknown date(1) format, "
-               "please file bug report: ", _stdout, _stderr,
-               "https://github.com/jquast/joes-ntpdate",
-               "Include your OS release version.")
-
+    cmd_args = ['date', '-u', time.strftime(get_strftime_fmt(), struct_time)]
     proc = subprocess.Popen(cmd_args, cwd='/', shell=False,
             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = proc.communicate()
@@ -152,6 +137,8 @@ def parse_args(args):
 
     return dict(parser.parse_args(args)._get_kwargs())
 
+def main():
+    exit(ntpdate(**parse_args(sys.argv[1:])))
 
 if __name__ == '__main__':
-    exit(ntpdate(**parse_args(sys.argv[1:])))
+    main()
