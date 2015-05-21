@@ -51,7 +51,7 @@ def get_strftime_fmt():
                    "a bug report: github.com/jquast/joes-ntpdate ",
                    (_stdout, _stderr))
 
-def do_set_hwclock(struct_time):
+def do_set_hwclock():
     subprocess.check_call(['hwclock', '--systohc'])
 
 def do_set_system(struct_time):
