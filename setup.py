@@ -24,7 +24,7 @@ setuptools.setup(
     zip_safe=True,
     keywords=['ntpdate', 'hwclock', 'time', 'clock', 'synchronize'],
     entry_points={
-        'console_scripts': ['joes-ntpdate=joes_ntpdate:main'],
+        'console_scripts': ['joes-ntpdate=joes_ntpdate.joes_ntpdate:main'],
     },
     classifiers=[
         'Topic :: System :: Networking :: Time Synchronization'
