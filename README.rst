@@ -31,3 +31,5 @@ is found by the given ntp server.
                               <retry-step>}} (default: 2.0)
 
         Assumes bsd or gnu date(1) and gnu hwclock(8) if applicable.
+
+This package uses `ntplib <https://pypi.python.org/pypi/ntplib/>`_
