@@ -11,9 +11,9 @@ is found by the given ntp server.
 
 ::
 
-        usage: __init__.py [-h] [--set-system] [--set-hwclock] [--retries [N]]
-                           [--backoff_factor N]
-                           [ntp_host]
+        usage: joes-ntpdate [-h] [--set-system] [--set-hwclock] [--retries [N]]
+                            [--backoff-factor N]
+                            [ntp_host]
 
         Joe's own ntpdate: report or set clock by remote ntp host.
 
@@ -27,7 +27,7 @@ is found by the given ntp server.
           --set-hwclock       additionally, set hardware clock. May do nothing on
                               platforms without hwclock(8) (default: False)
           --retries [N]       retry on failure up to N times. (default: 30)
-          --backoff_factor N  retry backoff each step, sleep for {{<backoff-factor> *
+          --backoff-factor N  retry backoff each step, sleep for {{<backoff-factor> *
                               <retry-step>}} (default: 2.0)
 
         Assumes bsd or gnu date(1) and gnu hwclock(8) if applicable.
