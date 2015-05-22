@@ -19,7 +19,7 @@ setuptools.setup(
     license='MIT',
     packages=['joes_ntpdate'],
     install_requires=['ntplib>=0.3.2'],
-    url='https://github.com/jquast/joes_ntpdate',
+    url='https://github.com/jquast/joes-ntpdate',
     include_package_data=True,
     zip_safe=True,
     keywords=['ntpdate', 'hwclock', 'time', 'clock', 'synchronize'],
