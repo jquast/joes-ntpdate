@@ -27,7 +27,7 @@ setuptools.setup(
         'console_scripts': ['joes-ntpdate=joes_ntpdate.joes_ntpdate:main'],
     },
     classifiers=[
-        'Topic :: System :: Networking :: Time Synchronization'
+        'Topic :: System :: Networking :: Time Synchronization',
         'Natural Language :: English',
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
@@ -49,8 +49,6 @@ setuptools.setup(
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
-        'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: User Interfaces',
-        'Topic :: Terminals'
     ],
 )
