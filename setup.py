@@ -11,7 +11,7 @@ HERE = os.path.dirname(__file__)
 
 setuptools.setup(
     name='joes-ntpdate',
-    version='1.9.76',
+    version='1.9.77',
     description=("Joe's own ntpdate: set the date and time via NTP"),
     long_description=open(os.path.join(HERE, 'README.rst')).read(),
     author='Jeff Quast',
