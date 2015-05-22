@@ -21,9 +21,10 @@ from .retryable import retry
 import ntplib
 
 DATEHELP_STRFTIME_MAP = {
-  'MMDDhhmm[[CC]YY][.ss]': '%m%d%H%M%Y.%S',  # gnu
-  '[[[mm]dd]HH]MM[[cc]yy][.ss]]': '%m%d%H%M%Y.%S',  # osx
+  'MMDDhhmm[[CC]YY][.ss]':         '%m%d%H%M%Y.%S',  # gnu/linux
+  '[[[mm]dd]HH]MM[[cc]yy][.ss]]':  '%m%d%H%M%Y.%S',  # osx
   '[[[[[[cc]yy]mm]dd]HH]MM[.SS]]': '%Y%m%d%H%M.%S',  # openbsd
+  '[[[[[cc]yy]mm]dd]HH]MM[.ss]]':  '%Y%m%d%H%M.%S',  # freebsd
 }
 
 def has_hwclock():
