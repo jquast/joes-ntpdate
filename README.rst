@@ -1,10 +1,10 @@
-.. image:: https://img.shields.io/travis/erikrose/joes-ntpdate.svg
+.. image:: https://img.shields.io/travis/jquast/joes-ntpdate.svg
     :alt: Travis Continous Integration
-    :target: https://travis-ci.org/erikrose/joes-ntpdate/
+    :target: https://travis-ci.org/jquast/joes-ntpdate/
 
-.. image:: https://coveralls.io/repos/erikrose/joes-ntpdate/badge.png?branch=master
+.. image:: https://coveralls.io/repos/jquast/joes-ntpdate/badge.png?branch=master
     :alt: Coveralls Code Coverage
-    :target: https://coveralls.io/r/erikrose/joes-ntpdate?branch=master
+    :target: https://coveralls.io/r/jquast/joes-ntpdate?branch=master
 
 .. image:: https://img.shields.io/pypi/v/joes-ntpdate.svg
     :alt: Latest Version
