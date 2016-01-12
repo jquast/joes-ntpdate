@@ -1,11 +1,3 @@
-.. image:: https://img.shields.io/travis/jquast/joes-ntpdate.svg
-    :alt: Travis Continous Integration
-    :target: https://travis-ci.org/jquast/joes-ntpdate/
-
-.. image:: https://coveralls.io/repos/jquast/joes-ntpdate/badge.png?branch=master
-    :alt: Coveralls Code Coverage
-    :target: https://coveralls.io/r/jquast/joes-ntpdate?branch=master
-
 .. image:: https://img.shields.io/pypi/v/joes-ntpdate.svg
     :alt: Latest Version
     :target: https://pypi.python.org/pypi/joes-ntpdate
