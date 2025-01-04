@@ -2,7 +2,7 @@
     :alt: Latest Version
     :target: https://pypi.python.org/pypi/joes-ntpdate
 
-.. image:: https://pypip.in/license/joes-ntpdate/badge.svg
+.. image:: https://img.shields.io/pypi/l/joes-ntpdate.svg
     :alt: License
     :target: http://opensource.org/licenses/MIT
 
